@@ -1,0 +1,25 @@
+HackerRank Code Challenge
+
+
+public static void miniMaxSum(List<int> arr)
+    {
+        List<long>myLongArr = new List<long>();
+        
+        foreach(int x in arr){
+            myLongArr.add(x);
+        }
+        // use C# methods to get the sum of the array.
+        long sum = myLongArr.Sum(); 
+        //Then subtract the max to get the minimun sum
+        long minInt = myLongArr.Min();
+        // then subtract the minimum integer to get the maximum sum
+        long maxSum = sum - minInt;
+        
+        // get the minSum
+        long maxInt = myLongArr.Max();
+        
+        // then subtract the maximum integer to get the minimum sum
+        long minSum = sum-maxInt;
+        
+        Console.Write($"{minSum} {maxSum}");
+    }
