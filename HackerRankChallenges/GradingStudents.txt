@@ -1,0 +1,82 @@
+    public static List<int> gradingStudents(List<int> grades)
+    {
+        List<int> newGrades = new List<int>();
+        // loop through grades list
+        foreach( int i in grades)
+        {   
+            // assign current index of grade to index
+            int num = 0;
+            // convert num variable to string
+            string number = num.ToString();
+            // assign number index 0 to a int
+            int firstNumber = (int)number[0];
+            
+            // assign number of index 1 to a int if it exist
+            if(number[1] != typeof char){
+                int secondNumber = (int)number[1];
+            }
+             
+            // chars for first and second index
+            string firstIndex = "ch";
+            string secondIndex = "ch";
+            
+            // getting the difference of 10 and the second number
+            int difference = 10 - secondNumber;
+            
+            
+            // if grades[i] is less than 38 do nothing
+            if( grades[i] < 38)
+            {
+                continue;
+            } 
+            
+                         
+            if(difference == 7 || difference == 6) // else if the difference is 7 or 6 
+            {
+                // casting firstNumber to char
+                firstIndex = firstNumber.ToString();
+    
+                // if difference is 7 or 6 we modify second number to equal 5
+                secondNumber = 5;
+                // casting secondNumber to char
+                secondIndex = secondNumber.ToString();
+                
+                // concat first and second index to the number string
+                number = firstIndex + secondIndex;
+                
+                // parse number string to int
+                num = Int32.Parse(number);
+                
+                // adding num to newGrades list
+                newGrades.Add(num);
+            }
+            else if( difference == 2 || difference == 1)
+            {
+                // if difference is 2 or 1 then we modify first and second number 
+                firstNumber += 1;
+                secondNumber = 0;
+                
+                // casting firstNumber to char
+                firstIndex = firstNumber.ToString();
+    
+                // casting secondNumber to char
+                secondIndex = secondNumber.ToString();
+                
+                // concat first and second index to the number string
+                number = firstIndex + secondIndex;
+                
+                // parse number string to int
+                num = Int32.Parse(number);
+                
+                newGrades.Add(num);
+            }
+            else
+            {
+                newGrades.Add(grades[i]);
+            }
+        }
+        
+        return newGrades;
+    }
+
+}
