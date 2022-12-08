@@ -1,0 +1,50 @@
+
+public static void countApplesAndOranges(int s, int t, int a, int b, List<int> apples, List<int> oranges)
+    {
+        // assigning each value type to a new variable for better naming
+        int startingPoint = s;
+        int endingPoint = t;
+        int appleTree = a;
+        int orangeTree = b;
+        
+        // referencing each reference variable to another reference variable
+        List<int> appleFallingDistance = apples;
+        List<int> orangeFallingDistance = oranges;
+        
+        // declaring and initializing how many apples and oranges lands on the house
+        int applesOnHouse = 0;
+        int orangesOnHouse = 0;
+        
+        // iterating through appleFallingDistance
+        foreach( int i in appleFallingDistance)
+        {
+            // positionLanded = the position of the apple tree + where the apple fell
+            int positionLanded = appleTree + i;
+            
+            // if positionLanded is between 7 and 10 or equals 7 or 10
+            if(positionLanded >= startingPoint && positionLanded <= endingPoint)
+            {
+                // add 1 to the apples landed on the house
+                applesOnHouse += 1;
+            }
+        }
+        
+        // iterating through orangeFallingDistance
+        foreach( int i in orangeFallingDistance)
+        {
+            // positionLanded = the position of the orange tree + where the orange fell
+            int positionLanded = orangeTree + i;
+            
+            // if positionLanded is between 7 and 10 or equals 7 or 10
+            if(positionLanded >= startingPoint && positionLanded <= endingPoint)
+            {
+                // add 1 to the oranges landed on the house
+                orangesOnHouse += 1;
+            }
+        }
+        
+        // printing the results
+        Console.WriteLine(applesOnHouse);
+        Console.WriteLine(orangesOnHouse);
+
+    }
