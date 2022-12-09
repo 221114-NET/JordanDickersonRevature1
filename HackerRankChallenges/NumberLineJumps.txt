@@ -1,0 +1,32 @@
+public static string kangaroo(int x1, int v1, int x2, int v2)
+    {
+        
+        // x1 = kangaroo1 position v1 = kangaroo1 rate
+        // x2 = kangaroo2 position v2 = kangaroo2 rate
+    
+        // if kangaroo1 rate is smaller or equal to
+        // kangaroo2 rate then return No automatically
+        // because kangaroo1 can never catch up based
+        // off of the constraints given
+        if(v1 <= v2)
+            return "NO";
+         
+        // while kangaroo1 position does not equal kangaroo2 position
+        // continue looping   
+        while(x1 != x2)
+        {
+            // updating the position of both kangaroos
+            x1 = x1 + v1;
+            x2 = x2 + v2;
+            
+            // if kangaroo1 jumps ahead of kangaroo2 then kangaroo2 will
+            // never catch up because kangaroo1 has a higher rate than
+            // kangaroo2 so return NO
+            if(x1 > x2)
+            {
+                return "NO";
+            }      
+        }
+        // Once Kangaroo1 equals Kangaroo2 position then return true
+        return "YES";
+    }
