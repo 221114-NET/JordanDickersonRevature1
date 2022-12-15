@@ -1,0 +1,33 @@
+public static string dayOfProgrammer(int year)
+    {
+        // if year is equal to 1918, return 26.09.year
+        if (year == 1918)
+        {
+            return "26.09." + year;
+        }
+        else if (year < 1918)  // if year < 1918 go to the nest if statement
+        {
+            // if year is / 4 return "12.09.year
+            if (year % 4 == 0)
+            {
+                return "12.09." + year;
+            }
+            else
+            { // return 13/09/year
+                return "13.09." + year;
+            }
+        }
+        else if (year > 1918) // if year is greater than 1918 go to the nested if statement
+        { 
+            if ((year % 400 == 0) || ((year % 4 == 0) && !(year % 100 == 0))) // if year is divisonable by 400 or 4 and not 100 the return 12.09.year
+            {
+                return "12.09." + year;
+            }
+            else // return 13.09.year if not
+            {
+                return "13.09." + year;
+            }
+        }
+        // the program will never reach this, just here so the compiler doesn't say anything
+        return "1";
+    }
