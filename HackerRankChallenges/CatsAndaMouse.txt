@@ -1,0 +1,46 @@
+static string catAndMouse(int x, int y, int z) {
+        
+        // renaming x, y, z
+        int catA = x;
+        int catB = y;
+        int mouse = z;
+        
+        // need this variables so I can compare them
+        int positionA = 0;
+        int positionB = 0;
+        
+        // making sure postion get subtracted correctly positionA
+        if(catA < mouse || catA == mouse)
+        {
+            positionA = mouse - catA;
+        }
+        else if(mouse < catA)
+        {
+            positionA = catA - mouse;
+        }
+        
+        // making sure postion get subtracted correctly positionB
+        if(catB < mouse || catB == mouse)
+        {
+            positionB = mouse - catB;
+        }
+        else if(mouse < catB)
+        {
+            positionB = catB - mouse;
+        }
+        
+        // if positionA is less than positionB, return Cat A
+        if(positionA < positionB){   
+             return "Cat A";
+        }
+        // if positionB is less than positionA, return Cat B
+        else if(positionB < positionA)
+        {
+            return "Cat B";
+        }
+        // if both positionA == positionB return mouse c
+        else if(positionA == positionB){
+            return "Mouse C";
+        }
+        return "";
+    }
