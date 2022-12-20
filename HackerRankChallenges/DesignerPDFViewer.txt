@@ -1,0 +1,26 @@
+public static int designerPdfViewer(List<int> h, string word)
+    {
+        // variable to hold what a char is in integer format
+        int charAsInt = 0;
+        
+        // variable to get the value of each index from the list
+        int hValue = 0;
+        
+        
+        int hMaxValue = 0;
+        foreach(char character in word)
+        {
+            // calculating each character integer based off ascii chart
+            // the contraints tells me that each char will be lowercase
+            // so I subtract each char - 97
+            charAsInt = character - 97;
+            
+            // assigning the value of the index in the h list
+            hValue = h[charAsInt];
+            // assiging and figuring out the highest value based off
+            // the characters of the word
+            hMaxValue = Math.Max(hValue, hMaxValue);
+        }
+        // return the max value * word length
+        return hMaxValue * word.Length;
+    }
