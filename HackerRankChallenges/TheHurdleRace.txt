@@ -1,0 +1,30 @@
+public static int hurdleRace(int k, List<int> height)
+    {
+        //height character can jump
+        int charactersJump = k;
+        
+        // potions needed
+        int potion = 0;
+        
+        // total amount of potions this character will need
+        int total = 0;
+        
+        // looping through each hurdle in the height list
+        foreach(int hurdle in height)
+        {
+            if(hurdle > charactersJump)
+            {
+                // calculating how many potions the character needs
+                potion = hurdle - charactersJump;
+                
+                // updating the max height that the chacater can jump after the potion is added to it
+                charactersJump = hurdle;
+                
+                //counting the total amount of potions the character should take
+                total = total + potion;
+            }
+        }
+        
+        // return the total number of potions this character needs
+        return total;
+    }
